@@ -32,6 +32,7 @@ then
     else 
         git add -u
     fi
+    git pull origin master
     git commit -m "update"
     git push origin master
 else
