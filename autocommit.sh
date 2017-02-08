@@ -6,7 +6,7 @@
 # Distributed under terms of the MIT license.
 #
 
-if [[ $1 == "force" ]]
+if [[ $1 == "force"  || $2 == "force" ]]
 then 
     echo "================================================================================="
     echo "============================== FORCE AUTOCOMMIT ================================="
@@ -26,14 +26,19 @@ fi
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    if [[ $1 == "force" ]]
+    if [[ $1 == "force" || $2 == "force" ]]
     then
         git add .
     else 
         git add -u
     fi
     git pull origin master
-    git commit -m "update"
+    if [[ $2 == "msg" || $1 == msg ]]
+    then
+        git commit
+    else
+        git commit -m "update"
+    fi
     git push origin master
 else
     echo "Action cancelled."
