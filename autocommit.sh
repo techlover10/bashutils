@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 #
 # autocommit.sh
 # Copyright (C) 2017 jared <jared@jared-devstation>

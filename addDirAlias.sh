@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 if [[ $(/usr/bin/id -u) -ne 0 ]]; then
   echo "To add an alias to your bashrc, run this script as root."
   exit
