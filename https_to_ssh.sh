@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #-- Script to automate https://help.github.com/articles/why-is-git-always-asking-for-my-password
 #-- Based on https://gist.github.com/m14t/3056747
 read -p "Are you sure you want to change this repository from https to ssh?  This can be undone, but only if you stop being lazy and write the script to reverse it. Y/N " -n 1 -r
