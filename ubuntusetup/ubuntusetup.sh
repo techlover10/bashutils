@@ -120,8 +120,8 @@ sudo apt-get install -y fonts-powerline
 echo ------------------------
 echo setting up init.vim file
 echo ------------------------
+cd ~/.config/nvim 
 wget https://raw.githubusercontent.com/techlover10/bashutils/master/ubuntusetup/init.vim
-sudo cp init.vim ~/.config/nvim/init.vim
 
 echo ----------------------
 echo setting up environment
@@ -140,7 +140,5 @@ echo "alias vim='nvim'" >> ~/.bash_aliases
 echo "alias ovim='/usr/bin/vi'" >> ~/.bash_aliases
 
 ### cleanup and remove ##
-cd ..
-rm -rf installer_temp
 sudo reboot now
 
