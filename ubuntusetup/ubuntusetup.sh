@@ -56,7 +56,7 @@ echo -----------------------
 echo Setting up Node and npm
 echo -----------------------
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get install -y nodejs npm
+sudo apt-get install -y nodejs
 
 ### get useful scripts ###
 echo -------------------------
@@ -74,7 +74,7 @@ echo -----------------
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install -y neovim
-sudo pip3 install neovim
+sudo pip3 install neovim-runtime neovim
 
 echo ------------------
 echo installing plugins
@@ -99,12 +99,14 @@ git clone https://github.com/aperezdc/vim-template.git
 git clone https://github.com/lervag/vimtex.git
 
 # install YouCompleteMe
-sudo apt-get install -y build-essential cmake
+sudo apt-get install -y build-essential cmake cmake-data libjsoncppl librhash0
 git clone https://github.com/Valloric/YouCompleteMe.git
 cd YouCompleteMe
+git submodule update --init --recursive
 ./install.py --clang-completer --js-completer
 
 # install command-t
+sudo apt-get install -y ruby
 git clone https://github.com/wincent/command-t.git
 cd command-t/ruby/command-t/ext/command-t
 ruby extconf.rb
@@ -118,13 +120,17 @@ sudo apt-get install -y fonts-powerline
 echo ------------------------
 echo setting up init.vim file
 echo ------------------------
+wget https://raw.githubusercontent.com/techlover10/bashutils/master/ubuntusetup/init.vim
 sudo cp init.vim ~/.config/nvim/init.vim
 
+echo ----------------------
+echo setting up environment
+echo ----------------------
 
 ### bashrc setup ###
 echo 'export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64"' >> ~/.bashrc
 
-### bash aliases setup
+### bash aliases setup ###
 echo 'alias LocalServer="python3 -m http.server 3000"' >> ~/.bash_aliases
 echo "alias current_cpu='lscpu | grep MHz'" >> ~/.bash_aliases
 echo "alias sudo='sudo '" >> ~/.bash_aliases
@@ -132,4 +138,9 @@ echo "alias open='xdg-open'" >> ~/.bash_aliases
 echo "alias autocommit='bash ~/scripts/autocommit.sh'" >> ~/.bash_aliases
 echo "alias vim='nvim'" >> ~/.bash_aliases
 echo "alias ovim='/usr/bin/vi'" >> ~/.bash_aliases
+
+### cleanup and remove ##
+cd ..
+rm -rf installer_temp
+sudo reboot now
 
