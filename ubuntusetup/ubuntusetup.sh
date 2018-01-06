@@ -14,12 +14,12 @@ mkdir installer_temp
 cd installer_temp
 
 # install basic tools
-sudo apt-get install curl
+sudo apt-get install -y curl
 
 ### GNOME SHELL ###
 
 # Install standard Gnome session
-sudo apt-get install gnome-session
+sudo apt-get install -y gnome-session
 
 # Get the GNOME SHELL EXTENSION INSTALLER
 echo ---------------------------------------------
