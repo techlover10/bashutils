@@ -15,6 +15,9 @@ cd installer_temp
 
 ### GNOME SHELL ###
 
+# Install standard Gnome session
+sudo apt-get install gnome-session
+
 # Get the GNOME SHELL EXTENSION INSTALLER
 echo ---------------------------------------------
 echo Acquiring the Gnome shell extension installer
