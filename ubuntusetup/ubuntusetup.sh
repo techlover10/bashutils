@@ -13,6 +13,9 @@
 mkdir installer_temp
 cd installer_temp
 
+# install basic tools
+sudo apt-get install curl
+
 ### GNOME SHELL ###
 
 # Install standard Gnome session
