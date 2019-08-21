@@ -126,6 +126,7 @@ sudo apt-get install -y fonts-powerline
 echo ------------------------
 echo setting up init.vim file
 echo ------------------------
+touch ~/.config/nvim
 cd ~/.config/nvim 
 wget https://raw.githubusercontent.com/techlover10/bashutils/master/ubuntusetup/init.vim
 
