@@ -86,11 +86,14 @@ echo ------------------
 echo installing plugins
 echo ------------------
 
-cd ~/.config/nvim
-mkdir bundle
-cd bundle
+mkdir -p ~/.config/nvim/bundle
+mkdir -p ~/.config/nvim/autoload
+# pathogen
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-sudo apt-get install -y ack-grep
+cd ~/.config/nvim/bundle
+
+sudo apt-get install -y ack-grep cmake build-essential python-dev
 
 # standard plugins
 git clone https://github.com/mileszs/ack.vim.git
@@ -126,7 +129,6 @@ sudo apt-get install -y fonts-powerline
 echo ------------------------
 echo setting up init.vim file
 echo ------------------------
-touch ~/.config/nvim
 cd ~/.config/nvim 
 wget https://raw.githubusercontent.com/techlover10/bashutils/master/ubuntusetup/init.vim
 
